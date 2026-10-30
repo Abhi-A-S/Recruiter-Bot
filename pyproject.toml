@@ -1,15 +1,21 @@
 [project]
 name = "recruiter-bot"
 version = "0.1.0"
-description = "Add your description here"
+description = "Recruiter-Bot candidate & job matching backend service"
 readme = "README.md"
 authors = [{ name = "Abhi", email = "akwork607@gmail.com" }]
 requires-python = ">=3.12.15"
-dependencies = []
+dependencies = [
+    "fastapi[standard]>=0.162.0",
+    "httpx>=0.28.1",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1",
+]
+
+[project.scripts]
+recruiterbot = "recruiter_bot:main"
+recruiterbot-seed = "recruiter_bot.seed_data:seed_cli"
 
 [build-system]
 requires = ["uv_build>=0.12.24,<0.13.0"]
 build-backend = "uv_build"
-
-[tool.uv]
-package = false
